@@ -37,9 +37,6 @@ bash
 Copy code
 npm run build
 npm start
-Component Details
-1. MobileMenu
-The MobileMenu component provides a collapsible sidebar for small screens, with a hamburger menu button to toggle visibility.
 
 Technology Stack
 Next.js: Framework for React-based applications with SSR and SSG capabilities.
