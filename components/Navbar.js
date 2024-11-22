@@ -1,9 +1,30 @@
 import React from "react";
-import MobileMenu from "./MobileMenu";
 const Navbar = () => {
   return (
-    <nav className="bg-white shadow-md">
-      <div className="container mx-auto flex flex-wrap justify-between items-center py-3">
+    <nav className=" bg-white shadow-md">
+      {/* Mobile Screen */}
+      <div className="container md:hidden mx-auto">
+        {/* Search Bar Section */}
+        <div className="px-4 pb-4 items-center">
+          <input
+            type="text"
+            placeholder="Search"
+            className="w-full p-2 bg-gray-200 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+
+        {/* Categories Section */}
+        <div className="flex flex-row mb-3 mt-1 overflow-x-auto md:overflow-visible">
+          <ul className="flex gap-3 px-4 pb-2 rounded-lg">
+            <li className="p-2 bg-white shadow-md rounded-md">All Category</li>
+            <li className="p-2 bg-white shadow-md rounded-md">Gadgets</li>
+            <li className="p-2 bg-white shadow-md rounded-md">Clothes</li>
+            <li className="p-2 bg-white shadow-md rounded-md">Accessory</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="hidden md:flex container mx-auto  flex-wrap justify-between items-center py-3">
         {/* Left: Category and Navigation */}
         <div className="flex items-center space-x-6">
           {/* Categories Dropdown */}
@@ -44,6 +65,10 @@ const Navbar = () => {
             <span className="material-icons ml-2">arrow_drop_down</span>
           </div>
         </div>
+      </div>
+
+      <div>
+
       </div>
     </nav>
   );

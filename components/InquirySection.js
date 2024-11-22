@@ -2,10 +2,10 @@ import React from "react";
 
 const InquirySection = () => {
   return (
-    <section className="bg-gray-100 py-10">
+    <><section className="bg-gray-100 md:block hidden py-10">
       {/* Background Container */}
       <div
-        className="rounded-md shadow-lg flex flex-col justify-between bg-center bg-cover p-6"
+        className="rounded-md shadow-lg hidden md:flex flex-col justify-between bg-center bg-cover p-6"
         style={{
           backgroundImage: "url('/back.jpg')",
           backgroundSize: "100%",
@@ -15,14 +15,14 @@ const InquirySection = () => {
         }}
       >
         {/* Content Container */}
-        <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-8">
+        <div className="container mx-auto px-4 hidden md:flex flex-col lg:flex-row items-center gap-8">
           {/* Left Side: Welcome Message */}
           <div className="lg:w-2/3 text-white text-center lg:text-left space-y-4">
             <h2 className="text-3xl font-bold">
               Welcome to Our Website
             </h2>
             <p className="text-lg leading-relaxed">
-              Discover high-quality products tailored to your needs. 
+              Discover high-quality products tailored to your needs.
               Share your inquiry and let us help you find exactly what you’re looking for!
             </p>
           </div>
@@ -41,8 +41,7 @@ const InquirySection = () => {
                 type="text"
                 id="item"
                 placeholder="Enter the item name"
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-              />
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none" />
             </div>
 
             {/* Form: Details */}
@@ -75,8 +74,7 @@ const InquirySection = () => {
                   type="number"
                   id="quantity"
                   placeholder="Enter quantity"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                />
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none" />
               </div>
 
               {/* Units Dropdown */}
@@ -107,6 +105,26 @@ const InquirySection = () => {
         </div>
       </div>
     </section>
+    <section className="bg-gray-100">
+      <div className="block md:hidden rounded-md shadow-lg flex-col justify-between bg-cover p-6"
+        style={{
+          backgroundImage: "url('/back.jpg')",
+          backgroundSize: "100%",
+          minHeight: "300px",
+        }}
+      >
+        <div className=" text-white text-center">
+          <div className="items-center justify-items-center mt-10 mb-3">
+            <h2 className="text-xl font-bold ">
+              An easy way to send <br/>requests to all suppliers
+            </h2>
+          </div>
+          <button className="w-50 bg-blue-500 text-white rounded-lg px-4 py-2 font-medium hover:bg-blue-600 transition">
+              Send Inquiry
+          </button>
+          </div>
+      </div>
+    </section></>
   );
 };
 

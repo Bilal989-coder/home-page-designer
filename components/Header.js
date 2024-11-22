@@ -1,4 +1,5 @@
 import React from "react";
+import MobileMenu from "./MobileMenu";
 
 const Header = () => {
   return (
@@ -6,14 +7,19 @@ const Header = () => {
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <div className="w-10 h-10 bg-blue-100 text-blue-600 flex items-center justify-center rounded-md">
+          <div className="block md:hidden">
+            <div>
+               <MobileMenu /> 
+            </div>
+          </div>
+          <div className="flex w-10 h-10 bg-blue-100 text-blue-600  items-center justify-center rounded-md">
             <span className="material-icons">shopping_bag</span>
           </div>
           <span className="text-xl font-bold text-blue-600">Brand</span>
         </div>
 
         {/* Middle Section */}
-        <div className="flex items-center space-x-4 flex-1 mt-4 md:mt-0 md:ml-4 w-full md:w-auto">
+        <div className=" hidden md:flex  items-center space-x-4 flex-1 mt-4 md:mt-0 md:ml-4 w-full md:w-auto">
           {/* Search Form */}
           <div className="flex items-center w-full md:w-auto flex-grow">
             <input
@@ -37,11 +43,11 @@ const Header = () => {
         </div>
 
         {/* Right Section */}
-        <div className="flex items-center space-x-4 pl-2 mt-4 md:mt-0">
+        <div className="hidden md:flex  items-center space-x-4 pl-2 mt-4 md:mt-0">
           {/* Profile */}
           <div className="flex flex-col items-center text-gray-500 cursor-pointer hover:text-blue-600">
             <span className="material-icons">person</span>
-            <span className="text-sm">Profile</span>
+            <span className=" text-sm">Profile</span>
           </div>
           {/* Message */}
           <div className="flex flex-col items-center text-gray-500 cursor-pointer hover:text-blue-600">
@@ -59,6 +65,19 @@ const Header = () => {
             <span className="text-sm">My Cart</span>
           </div>
         </div>
+
+        {/* Mobile Screen */}
+        <div className="block md:hidden">
+          <div className="flex items-center space-x-4 pl-2 mt-4 md:mt-0">
+            <div className="flex flex-col items-center text-gray-500 cursor-pointer hover:text-blue-600">
+              <span className="material-icons">shopping_cart</span>
+            </div>
+            <div className="flex flex-col items-center text-gray-500 cursor-pointer hover:text-blue-600">
+              <span className="material-icons">person</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </header>
   );

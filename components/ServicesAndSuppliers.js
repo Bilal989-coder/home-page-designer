@@ -2,7 +2,7 @@ import React from "react";
 
 const ServicesAndSuppliers = () => {
   return (
-    <div className="bg-gray-100 py-8">
+    <div className="bg-gray-100 hidden md:block py-8">
       {/* Our Extra Services Section */}
       <div className="container mx-auto px-4">
         <h2 className="text-xl font-bold mb-4">Our extra services</h2>

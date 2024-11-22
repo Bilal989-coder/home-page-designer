@@ -47,7 +47,10 @@ React: Front-end library for building interactive user interfaces.
 Tailwind CSS: Utility-first CSS framework for rapid UI development.
 
 HOME PAGE FOR LARGE SIZE
-![image](https://github.com/user-attachments/assets/0cd4b73c-e7b7-4059-b5fe-adb7687d09b4)
+![alt text](image-1.png)
 
 HOME PAGE FOR MEDIUM SIZE
 ![image](https://github.com/user-attachments/assets/6aebdea5-eb30-4ca2-b1ae-a0de900af311)
+
+HOME PAGE FOR SMALL SIZE
+![alt text](image.png)

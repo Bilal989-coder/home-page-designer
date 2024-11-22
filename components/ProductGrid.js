@@ -21,10 +21,10 @@ const ProductGrid = () => {
   ];
 
   return (
-    <section className="bg-gray-100 shadow-md">
+    <><section className="bg-gray-100 md:block hidden shadow-md">
       <div className="container mx-auto px-4 py-4">
         {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-1">
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-5 gap-1 ">
           {/* Main Banner */}
           <div
             className="row-span-2 bg-cover bg-center rounded-md shadow-md p-4 flex flex-col justify-between"
@@ -57,14 +57,46 @@ const ProductGrid = () => {
                 <img
                   src={product.img}
                   alt={product.name}
-                  className="w-20 h-20 object-cover rounded-md"
-                />
+                  className="w-20 h-20 object-cover rounded-md" />
               </div>
             ))}
           </div>
         </div>
       </div>
-    </section>
+    </section><div className="md:hidden m-0 bg-white">
+        {/* Deal Overview in a Row */}
+        <div className="block justify-between items-center bg-white rounded-md shadow-md p-4">
+          <div className="block flex-col">
+            <h2 className="text-xl font-bold">Home and Outdoor</h2>
+          </div>
+        </div>
+        {/* 3 Cards per Row */}
+        <div className="grid grid-cols-3">
+          {products.slice(0, 3).map((product) => (
+            <div
+              key={product.id}
+              className="bg-white rounded-md cursor-pointer hover:translate-y-[-10px] transition-all duration-500 shadow-md p-2 block items-center justify-between"
+            >
+              <img
+                src={product.img}
+                alt={product.name}
+                className="w-20 h-18 object-cover rounded-md" />
+              <div>
+                <h2 className="text-md font-semibold">{product.name}</h2>
+                <p className="text-gray-600 text-sm">From {product.price}</p>
+              </div>
+
+            </div>
+          ))}
+        </div>
+        <div className="block container justify-between items-center bg-white rounded-md shadow-md p-4">
+          <a href="#" className="flex items-center space-x-2 font-semibold text-blue-500">
+            <span>Source now</span>
+            <span className="material-icons mt-0.5">arrow_forward</span>
+          </a>
+        </div>
+      </div></>
+      
   );
 };
 

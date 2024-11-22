@@ -26,9 +26,30 @@ const HeroSection = () => {
 
   return (
     <section className="bg-gray-100 shadow-md">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-12  py-8">
+      <div
+          className="md:col-span-6 p-6 shadow-md md:hidden rounded relative flex items-center justify-center bg-cover bg-center"
+          style={{
+            backgroundImage: `url('/background.jpg')`,
+            height: 250
+          }}
+        >
+          {/* Overlay for Better Text Visibility */}
+          <div className="absolute inset-0 bg-black bg-opacity-30 rounded"></div>
+
+          {/* Banner Text Content */}
+          <div className="relative text-white text-center">
+            <h1 className="text-xl md:text-2xl">
+              Latest trending <br />
+              <span className="font-semibold">Electronic items</span>
+            </h1>
+            <button className="mt-4 bg-white text-black py-2 px-4 rounded hover:bg-blue-600 transition duration-300">
+              Learn more
+            </button>
+          </div>
+        </div>
+      <div className="container hidden md:grid mx-auto  grid-cols-1 md:grid-cols-12  py-8">
         {/* Left Sidebar: Categories */}
-        <div className="md:col-span-3 bg-white p-4 rounded shadow-md">
+        <div className="hidden md:flex md:col-span-3 bg-white p-4 rounded shadow-md">
           <ul className="space-y-4">
             {categories.map((category, index) => (
               <li
@@ -45,7 +66,7 @@ const HeroSection = () => {
 
         {/* Main Content: Banner */}
         <div
-          className="md:col-span-6 p-6 shadow-md rounded relative flex items-center justify-center bg-cover bg-center"
+          className="md:col-span-6 p-6 shadow-md  rounded relative flex items-center justify-center bg-cover bg-center"
           style={{
             backgroundImage: `url('/background.jpg')`,
           }}
@@ -66,7 +87,7 @@ const HeroSection = () => {
         </div>
 
         {/* Right Sidebar: User Actions */}
-        <div className="md:col-span-3 space-y-4 pl-4">
+        <div className=" md:col-span-3  space-y-4 pl-4">
           {/* User Greeting Section */}
           <div className="bg-blue-200 p-4 shadow-md rounded text-center">
             <div className="flex flex-col md:flex-row items-center">

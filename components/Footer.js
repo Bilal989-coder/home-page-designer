@@ -3,9 +3,10 @@ import React from "react";
 const Footer = () => {
   // Data for Categories
   const categories = [
-    { title: "Categories", links: ["Blogs"] },
-    { title: "Shipping", links: ["Contact us"] },
-    { title: "Settings", links: ["My Orders"] },
+    { title: "About", links: ["About Us", "Find Store", "Categories", "Blogs"] },
+    { title: "Partnership", links: ["Affiliate Program", "Become a Partner", "Suppliers", "Media"] },
+    { title: "Information", links: ["Help Center", "Money Refund", "Shipping", "Contact Us"] },
+    { title: "For User", links: ["Login", "Register", "Settings", "My Orders"] },
   ];
 
   // Social Media Links
@@ -18,13 +19,11 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-200 text-gray-700">
+    <footer className="bg-gray-200 md:block hidden text-gray-700">
       {/* Newsletter Section */}
       <div className="text-center py-8 px-4">
         <h2 className="text-2xl font-bold mb-2">Subscribe to our newsletter</h2>
-        <p className="text-md mb-4">
-          Get daily updates on offers from suppliers worldwide.
-        </p>
+        <p className="text-md mb-4">Get daily updates on offers from suppliers worldwide.</p>
         <div className="flex justify-center">
           <input
             type="email"
@@ -38,12 +37,21 @@ const Footer = () => {
       </div>
 
       {/* Main Footer Section */}
-      <div className=" py-6 bg-gray-100">
-        <div className="container  mx-auto px-4 grid grid-cols-1 md:grid-cols-5 gap-8">
+      <div className="py-6 bg-white">
+        <div className="w-auto mx-auto px-6 grid grid-cols-1 md:grid-cols-6 ">
           {/* Social Media Links */}
-          <div>
-            <h3 className="font-semibold mb-2">Follow Us</h3>
-            <div className="flex space-x-4">
+          <div className="m-2">
+            <div >
+            <div className="flex items-center mb-4 space-x-2">
+              <div className="w-10 h-10 bg-blue-100 text-blue-600 flex items-center justify-center rounded-md">
+                <span className="material-icons">shopping_bag</span>
+              </div>
+              <span className="text-xl font-bold text-blue-600">Brand</span>
+            </div>
+            <p className="text-sm mb-4">
+              Best information about the company <br /> goes here. For now, lorem ipsum.
+            </p>
+            <div className="flex space-x-4 py-2">
               {socialMedia.map((media, index) => (
                 <a
                   key={index}
@@ -56,18 +64,16 @@ const Footer = () => {
               ))}
             </div>
           </div>
+          </div>
 
           {/* Dynamic Categories */}
           {categories.map((category, index) => (
-            <div key={index}>
+            <div key={index} className="m-3">
               <h3 className="font-semibold mb-2">{category.title}</h3>
               <ul>
                 {category.links.map((link, idx) => (
-                  <li key={idx}>
-                    <a
-                      href="#"
-                      className="text-gray-600 hover:text-gray-800"
-                    >
+                  <li key={idx} className="mb-1">
+                    <a href="#" className="text-gray-600 hover:text-gray-800">
                       {link}
                     </a>
                   </li>
@@ -76,12 +82,20 @@ const Footer = () => {
             </div>
           ))}
 
-          {/* Google Play Button */}
+          {/* App Buttons */}
           <div>
-            <h3 className="font-semibold mb-2">Download Our App</h3>
+            <h3 className="font-semibold mb-2">Get the App</h3>
+            <button className="bg-black text-white px-4 py-2 mb-2 rounded hover:bg-gray-800 flex items-center">
+              <img
+                src="/Subtract.png"
+                alt="Google Play"
+              />
+            </button>
             <button className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 flex items-center">
-              <i className="fab fa-google-play mr-2"></i>
-              Google Play
+              <img
+                src="/Logo.png"
+                alt="App Store"
+              />
             </button>
           </div>
         </div>
